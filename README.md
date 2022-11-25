@@ -25,11 +25,11 @@ _Just an app to make a list about do, doing and did_
 <h2>🖥 How to execute this project?</h2>
 
 ```
-- yarn install
+- npm i
 ```
 
 ```
-- yarn dev
+- npm run dev
 ```
 
 
