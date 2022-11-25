@@ -1,0 +1,20 @@
+.tasksDashboard {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.tasksCreated strong {
+  color: var(--blue);
+}
+
+.tasksFinished strong {
+  color: var(--purple);
+}
+
+.tasksCounter {
+  margin-left: 0.5rem;
+  padding: 2px 8px;
+  background-color: var(--gray-400);
+  border-radius: 8px;
+}
