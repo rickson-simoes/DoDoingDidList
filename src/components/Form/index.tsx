@@ -5,8 +5,14 @@ export function Form() {
   return (
     <>
       <form className={styles.form}>
-        <input type="text" />
-        <button type="submit">Criar <PlusCircle /></button>
+        <input
+          type="text"
+          placeholder='Add a new task 📝'
+        />
+
+        <button type="submit">
+          Criar <PlusCircle />
+        </button>
       </form>
     </>
   )

@@ -1,3 +1,44 @@
 .form {
-  max-width: 46rem;
+  width: 46rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  height: 3.375rem;
+  margin-top: calc(0px - 3.375rem/2)
+}
+
+.form input {
+  border: 1px solid var(--gray-700);
+  background-color: var(--gray-500);
+
+  color: var(--gray-100);
+  padding: 1rem;
+  flex: 1;
+  border-radius: 8px;
+
+  transition: all 0.2s;
+}
+
+.form input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--purple-dark);
+}
+
+.form button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--gray-100);
+  background-color: var(--blue-dark);
+  outline: 0;
+  border: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  height: 3.25rem;
+
+  transition: all 0.2s;
+}
+
+.form button:hover {
+  background-color: var(--blue);
 }
