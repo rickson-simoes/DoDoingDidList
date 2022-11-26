@@ -1,10 +1,10 @@
 import { PlusCircle } from 'phosphor-react';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import { IForm } from '../../@Types';
 import styles from './Form.module.css';
 
 export function Form({ onSubmitNewTask }: IForm) {
-  const [newTask, setNewTask] = useState<string>("")
+  const [newTask, setNewTask] = useState<string>("");
 
   function handleNewTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,6 +17,10 @@ export function Form({ onSubmitNewTask }: IForm) {
     setNewTask(event.target.value);
   }
 
+  function handleInvalidComment(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity("How about start with some tasks?");
+  }
+
   return (
     <>
       <form onSubmit={(e) => handleNewTask(e)} className={styles.form}>
@@ -24,7 +28,9 @@ export function Form({ onSubmitNewTask }: IForm) {
           type="text"
           value={newTask}
           onChange={handleTaskName}
+          onInvalid={handleInvalidComment}
           placeholder='Add a new task 📝'
+          required
         />
 
         <button type="submit">
