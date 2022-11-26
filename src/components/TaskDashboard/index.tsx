@@ -20,7 +20,7 @@ export function TaskDashboard({ created = 0, finished = 0, total = 0 }: ITaskDas
 
       <div className={styles.tasksFinished}>
         <strong>Finished</strong>
-        <span className={styles.tasksCounter}>{finished} de {total}</span>
+        <span className={styles.tasksCounter}>{finished} of {total}</span>
       </div>
     </div>
   )
