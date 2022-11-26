@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as UuidV4 } from 'uuid';
 
 import { Form } from './components/Form'
@@ -15,14 +15,33 @@ import { ITaskList } from './@Types';
 export function App() {
   const [taskList, setTaskList] = useState<ITaskList[]>([]);
 
-  function onSubmitNewTask(newTask: string) {
+  function handleSubmitNewTask(newTask: string) {
     const newTaskObj: ITaskList = {
       id: UuidV4(),
-      task: newTask,
+      value: newTask,
       isTaskComplete: false
     };
 
-    setTaskList([...taskList, newTaskObj]);
+    setTaskList([newTaskObj, ...taskList]);
+  }
+
+  function handleDeleteTask(id: string) {
+    const newTaskList = taskList.filter(task => task.id != id);
+
+    setTaskList(newTaskList);
+  }
+
+  function handleCompleteTask(taskUpdated: ITaskList) {
+    const completedTask: ITaskList = {
+      ...taskUpdated,
+      isTaskComplete: true
+    };
+
+    const findTaskIndex = taskList.findIndex(task => task.id === taskUpdated.id);
+    const updateTaskList = taskList;
+    updateTaskList.splice(findTaskIndex, 1, completedTask);
+
+    setTaskList([...updateTaskList]);
   }
 
   return (
@@ -31,7 +50,7 @@ export function App() {
 
       <div className={styles.wrap}>
         <main className={styles.main}>
-          <Form handleSubmitForm={onSubmitNewTask} />
+          <Form onSubmitNewTask={handleSubmitNewTask} />
 
           <div className={styles.tasksContainer}>
             <TaskDashboard
@@ -47,8 +66,11 @@ export function App() {
               <div className={styles.tasks}>
                 {taskList.map(prop =>
                   prop.isTaskComplete ?
-                    <TasksDone task={prop.task} key={prop.id} /> :
-                    <TasksUndone task={prop.task} key={prop.id} />)}
+                    <TasksDone Task={prop} key={prop.id} onDeleteTask={handleDeleteTask} onCompleteTask={handleCompleteTask} />
+                    :
+                    <TasksUndone Task={prop} key={prop.id} onDeleteTask={handleDeleteTask} onCompleteTask={handleCompleteTask} />
+                )
+                }
               </div>
             }
           </div>

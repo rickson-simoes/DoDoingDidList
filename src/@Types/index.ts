@@ -1,9 +1,15 @@
 export interface ITaskList {
   id: string,
-  task: string,
+  value: string,
   isTaskComplete: boolean
 }
 
 export interface TasksContent {
-  task: string;
+  Task: ITaskList;
+  onDeleteTask: (id: string) => void;
+  onCompleteTask: (task: ITaskList) => void;
 }
+
+export interface IForm {
+  onSubmitNewTask: (task: string) => void;
+};
