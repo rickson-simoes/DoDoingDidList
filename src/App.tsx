@@ -6,7 +6,7 @@ import { Header } from './components/Header'
 import { TaskDashboard } from './components/TaskDashboard';
 import { TasksDone } from './components/TasksDone';
 import { TasksUndone } from './components/TasksUndone';
-import Clipboard from './assets/Clipboard.svg';
+import { NoTasksDisplay } from './components/NoTasksDisplay';
 
 import styles from './App.module.css';
 
@@ -38,11 +38,7 @@ export function App() {
 
             {taskList.length == 0
               ?
-              <div className={styles.noTasks}>
-                <img src={Clipboard} />
-                <strong>You still don't have any task</strong>
-                <span>Create some tasks and organize your Todo's 😎</span>
-              </div>
+              <NoTasksDisplay />
               :
               <div className={styles.tasks}>
                 {taskList.map(prop =>
