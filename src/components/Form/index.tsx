@@ -31,7 +31,7 @@ export function Form({ handleSubmitForm }: IForm) {
         />
 
         <button type="submit">
-          Criar <PlusCircle />
+          Create <PlusCircle />
         </button>
       </form>
     </>
