@@ -1,5 +1,5 @@
 import { PlusCircle } from 'phosphor-react';
-import { FormEvent, FormHTMLAttributes, useRef } from 'react';
+import { ChangeEvent, ChangeEventHandler, FormEvent, FormHTMLAttributes, InputHTMLAttributes, useRef, useState } from 'react';
 import styles from './Form.module.css';
 
 export interface IForm {
@@ -7,11 +7,17 @@ export interface IForm {
 };
 
 export function Form({ handleSubmitForm }: IForm) {
-  const newTask = useRef<HTMLInputElement>(null);
+  const [newTask, setNewTask] = useState<string>("")
 
   function handleNewTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    handleSubmitForm(newTask.current?.value!);
+
+    handleSubmitForm(newTask);
+    setNewTask("")
+  }
+
+  function handleTaskName(event: ChangeEvent<HTMLInputElement>) {
+    setNewTask(event.target.value);
   }
 
   return (
@@ -19,7 +25,8 @@ export function Form({ handleSubmitForm }: IForm) {
       <form onSubmit={(e) => handleNewTask(e)} className={styles.form}>
         <input
           type="text"
-          ref={newTask}
+          value={newTask}
+          onChange={handleTaskName}
           placeholder='Add a new task 📝'
         />
 
