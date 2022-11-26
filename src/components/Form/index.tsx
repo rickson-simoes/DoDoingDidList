@@ -1,5 +1,5 @@
 import { PlusCircle } from 'phosphor-react';
-import { ChangeEvent, ChangeEventHandler, FormEvent, FormHTMLAttributes, InputHTMLAttributes, useRef, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './Form.module.css';
 
 export interface IForm {
