@@ -35,8 +35,8 @@ _Just an app to make a list about do, doing and did_
 
 <h2>📸 App Images</h2>
 
-[![dodoingdid](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/imgs_samples/dodoingdid.jpg "Project view")](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/imgs_samples/dodoingdid.jpg "Project Demonstration")
+[![dodoingdid](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/src/imgs_samples/dodoingdid.jpg "Project view")](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/src/imgs_samples/dodoingdid.jpg "Project Demonstration")
 
-[![dodoingdid2](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/imgs_samples/dodoingdid2.jpg "Add new task")](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/imgs_samples/dodoingdid2.jpg "Project Demonstration")
+[![dodoingdid2](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/src/imgs_samples/dodoingdid2.jpg "Add new task")](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/src/imgs_samples/dodoingdid2.jpg "Project Demonstration")
 
-[![dodoingdid3](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/imgs_samples/dodoingdid3.jpg "Completing task")](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/imgs_samples/dodoingdid3.jpg "Project Demonstration")
+[![dodoingdid3](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/src/imgs_samples/dodoingdid3.jpg "Completing task")](https://raw.githubusercontent.com/rickson-simoes/DoDoingDidList/main/src/imgs_samples/dodoingdid3.jpg "Project Demonstration")
