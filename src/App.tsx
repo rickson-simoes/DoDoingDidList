@@ -34,7 +34,11 @@ export function App() {
           <Form handleSubmitForm={onSubmitNewTask} />
 
           <div className={styles.tasksContainer}>
-            <TaskDashboard />
+            <TaskDashboard
+              created={taskList.length}
+              finished={taskList.filter(task => task.isTaskComplete).length}
+              total={taskList.length}
+            />
 
             {taskList.length == 0
               ?
