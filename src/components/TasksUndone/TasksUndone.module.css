@@ -1,6 +1,7 @@
 .taskUndone {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   background-color: var(--gray-500);
   border: 1px solid var(--gray-400);
